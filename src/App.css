@@ -1,9 +1,138 @@
 .App {
+  /* text-align: center; */
+  overflow: hidden;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  color: #8566aa;
+}
+
+.fas.fa-redo-alt {
+  display: flex;
+  justify-content: end;
+  align-content: end;
+  position: absolute;
+  top: 27px;
+  right: 16px;
+  color: #8566aa;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  margin: 0px auto;
+}
+
+form {
   text-align: center;
 }
 
 table,
 th,
 td {
-  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+}
+
+th {
+  padding: 12px;
+}
+
+td {
+  padding: 6px;
+}
+
+input {
+  width: 20%;
+  padding: 10px 15px;
+  margin: 6px 8px;
+  background-color: #f4f4f4;
+  border: 0px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  width: 10%;
+  padding: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
+  background-color: #8566aa;
+  color: #fff;
+  border: 0px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.table-tab {
+  width: 40%;
+  margin: 20px auto;
+}
+
+@media (min-width: 322px) and (max-width: 640px) {
+  button {
+    width: 20%;
+  }
+  .container {
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  input {
+    width: 85%;
+    padding: 10px 15px;
+    margin: 6px auto;
+    background-color: #f4f4f4;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  td {
+    padding: 12px 7px !important;
+  }
+
+  .table-tab {
+    width: 94%;
+    margin: 20px auto;
+    min-width: 94% !important;
+  }
+}
+
+.styled-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  /* font-family: sans-serif; */
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #8566aa;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
 }
