@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
-
-
 
 function App() {
   const [data, setData] = useState([]);
@@ -19,7 +17,6 @@ function App() {
         setLoading(false);
       } else {
         let res = localStorage.getItem("data");
-        
 
         let arr = JSON.parse(res);
         let array = [];
@@ -39,12 +36,12 @@ function App() {
     getData();
   }, []);
 
-  function handleClick(id){
-    let a = data.filter(item => item._id !== id)
-    setData(a)
-    let b = JSON.parse(localStorage.getItem("data"))
-    let c = b.filter(item => item._id !== id)
-    localStorage.setItem("data",JSON.stringify(c))
+  function handleClick(id) {
+    let a = data.filter((item) => item._id !== id);
+    setData(a);
+    let b = JSON.parse(localStorage.getItem("data"));
+    let c = b.filter((item) => item._id !== id);
+    localStorage.setItem("data", JSON.stringify(c));
   }
 
   async function handleSubmit(e) {
@@ -57,9 +54,12 @@ function App() {
     let b = await a.json();
     let currentRate = b.USD.toString();
     let _id = uuidv4();
-    let c = [...data, { _id,coin: coin.value, rate: rate.value }];
+    let c = [...data, { _id, coin: coin.value, rate: rate.value }];
     localStorage.setItem("data", JSON.stringify(c));
-    setData([...data, { _id,coin: coin.value, rate: rate.value, currentRate }]);
+    setData([
+      ...data,
+      { _id, coin: coin.value, rate: rate.value, currentRate },
+    ]);
     coin.value = "";
     rate.value = "";
   }
@@ -100,7 +100,7 @@ function App() {
             <tbody>
               {data.map((item, index) => (
                 <tr key={index}>
-                  <td >{index +1} </td>
+                  <td>{index + 1} </td>
                   <td>{item.coin.toUpperCase()} </td>
                   <td>${item.rate}</td>
                   <td>${item.currentRate}</td>
@@ -124,7 +124,12 @@ function App() {
                         ).toFixed(2)}
                     %
                   </td>
-                  <td style={{cursor:"pointer",color:"#ff0000"}} onClick={()=>handleClick(item._id)}>Delete</td>
+                  <td
+                    style={{ cursor: "pointer", color: "#ff0000" }}
+                    onClick={() => handleClick(item._id)}
+                  >
+                    Delete
+                  </td>
                 </tr>
               ))}
             </tbody>

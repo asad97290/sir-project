@@ -72,6 +72,19 @@ button {
   width: 40%;
   margin: 20px auto;
 }
+@media (min-width: 322px) and (max-width: 511px) {
+  .fas.fa-redo-alt {
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    position: absolute;
+    top: 54px;
+    right: 11px;
+    color: #8566aa;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
 
 @media (min-width: 322px) and (max-width: 640px) {
   button {
@@ -107,6 +120,19 @@ button {
     width: 94%;
     margin: 20px auto;
     min-width: 94% !important;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 0px !important;
+  }
+
+  .styled-table {
+    border-collapse: collapse;
+    font-size: 11px !important;
+    /* font-family: sans-serif; */
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   }
 }
 
