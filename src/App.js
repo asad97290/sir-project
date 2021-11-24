@@ -26,7 +26,7 @@ function App() {
           );
           let b = await a.json();
           let currentRate = b.USD.toString();
-          array.push({ coin: arr[i].coin, rate: arr[i].rate, currentRate });
+          array.push({ _id:arr[i]._id,coin: arr[i].coin, rate: arr[i].rate, currentRate });
         }
         setData(array);
         setLoading(false);
@@ -99,7 +99,7 @@ function App() {
             </thead>
             <tbody>
               {data.map((item, index) => (
-                <tr key={index}>
+                <tr key={item._id}>
                   <td>{index + 1} </td>
                   <td>{item.coin.toUpperCase()} </td>
                   <td>${item.rate}</td>
@@ -136,6 +136,7 @@ function App() {
           </table>
         </>
       )}
+      {/* <img className="fear_and_greed" src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear and Greed Index" /> */}
     </div>
   );
 }
